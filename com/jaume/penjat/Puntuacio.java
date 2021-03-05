@@ -14,14 +14,10 @@ public class Puntuacio {
     private final String[] paraules2 = {"periquito", "peix espasa","nectarina", "peix daurat","xinxilla","armadillo","llenties"};
     private final String[] paraules3 = {"escombraries","escopinyes","engronxador","desnonament","malhauradament","malbaratament",};
     private final String[] letresBonus = {"x", "h", "y"};
-
-    public int getIntents() {
-        return intents;
+    public String getParaula() {
+        return paraula;
     }
 
-    public float getTemps() {
-        return temps;
-    }
 
     public String getParaulaSecretaDificultat(int dificultat){
         paraula = "err";
@@ -44,7 +40,7 @@ public class Puntuacio {
     }
 
     public float calcularPuntuacio(String[] palabraEdivinada, int vides){
-        float puntuacio = 0;
+        float puntuacio;
         float percentatge = 0f;
         long fi = System.currentTimeMillis();
         temps = (float) ((fi - inici)/1000);
@@ -86,8 +82,59 @@ public class Puntuacio {
         return puntuacio;
     }
 
-    private boolean stringContainsItemFromList(String inputStr, String[] items) {
+    public boolean stringContainsItemFromList(String inputStr, String[] items) {
         return Arrays.stream(items).anyMatch(inputStr::contains);
+    }
+    public void setParaula(String paraula) {
+        this.paraula = paraula;
+    }
+
+    public int getDificultat() {
+        return dificultat;
+    }
+
+    public void setDificultat(int dificultat) {
+        this.dificultat = dificultat;
+    }
+
+    public void setIntents(int intents) {
+        this.intents = intents;
+    }
+
+    public long getInici() {
+        return inici;
+    }
+
+    public void setInici(long inici) {
+        this.inici = inici;
+    }
+
+    public void setTemps(float temps) {
+        this.temps = temps;
+    }
+
+    public String[] getParaules1() {
+        return paraules1;
+    }
+
+    public String[] getParaules2() {
+        return paraules2;
+    }
+
+    public String[] getParaules3() {
+        return paraules3;
+    }
+
+    public String[] getLetresBonus() {
+        return letresBonus;
+    }
+
+    public int getIntents() {
+        return intents;
+    }
+
+    public float getTemps() {
+        return temps;
     }
 
 
